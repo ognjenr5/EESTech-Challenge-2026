@@ -40,6 +40,9 @@ CONFIG = {
         "map": "SOC",  # Straight, rOundabout, Curve
         "accident_prob": 0.0,
         "decision_repeat": 1,
+        #"out_of_road_done": False,
+        #"crash_vehicle_done": False,
+        #"crash_object_done": False
     },
 }
 
@@ -237,6 +240,7 @@ class Game:
 
                 # --- Call solution iteration with the latest simulator output and user input ---
                 next_action = solution.do_iteration(sim_out, user_input=user_input)
+
 
                 # --- Step the environment ---
                 sim_out = sim_out_to_dict(env.step(next_action))
